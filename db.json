@@ -1,8 +1,8 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "hello"
+    "type": "send_text_action",
+    "alternatives": ["Hello", "Hi"]
     }
   ],
   "profile": {
