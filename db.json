@@ -1,8 +1,10 @@
 {
   "posts": [
     {
-    "type": "send_text_action",
-    "alternatives": ["Hello", "Hi"]
+      "actions": [{
+        "type": "send_text_action",
+        "alternatives": ["Hello", "Hi"]
+      }]
     }
   ],
   "profile": {

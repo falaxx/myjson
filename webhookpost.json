@@ -1,0 +1,200 @@
+{
+    "fulfillment": {
+        "actions": [
+            {
+                "type": "send_text_action",
+                "alternatives": [
+                    "Je n'ai pas bien compris :/"
+                ],
+                "text": "Je n'ai pas bien compris :/"
+            },
+            {
+                "type": "wait_action",
+                "duration": 1
+            },
+            {
+                "type": "send_quick_replies_action",
+                "message": "Quel est l'objet de votre requête ? Ecrivez votre question ou choisissez une des questions fréquentes ci-dessous",
+                "buttons": [
+                    {
+                        "title": "Comment retourner un produit ?",
+                        "action": {
+                            "type": "go_to_action",
+                            "target": {
+                                "id": "5ebabd26e68fbf0a6f0c3661",
+                                "type": "step",
+                                "name": "return or trade"
+                            },
+                            "sessionValues": {}
+                        },
+                        "type": "quick_reply"
+                    },
+                    {
+                        "title": "Comment annuler ma commande ?",
+                        "action": {
+                            "type": "go_to_action",
+                            "target": {
+                                "id": "5ebab99569d8730d03b34f58",
+                                "type": "step",
+                                "name": "cancel order"
+                            },
+                            "sessionValues": {}
+                        },
+                        "type": "quick_reply"
+                    },
+                    {
+                        "title": "Questions relatives à mon compte",
+                        "action": {
+                            "type": "go_to_action",
+                            "target": {
+                                "id": "5ea83f5cabe7dc020bff6b43",
+                                "type": "story",
+                                "name": "Account"
+                            },
+                            "sessionValues": {}
+                        },
+                        "type": "quick_reply"
+                    },
+                    {
+                        "title": "test_webhook",
+                        "action": {
+                            "type": "go_to_action",
+                            "target": {
+                                "id": "5ecbc5384ad87c001b567115",
+                                "type": "step",
+                                "name": "test_webhook"
+                            },
+                            "sessionValues": {}
+                        },
+                        "type": "quick_reply"
+                    }
+                ]
+            }
+        ],
+        "source": {
+            "type": "step_actions",
+            "step": {
+                "type": "step",
+                "id": "5ea8285d89c0c3011a2fc92e",
+                "name": "Je nai pas compris"
+            },
+            "actionIndices": [
+                0
+            ]
+        },
+        "sources": [
+            {
+                "type": "step_actions",
+                "step": {
+                    "type": "step",
+                    "id": "5ea8285d89c0c3011a2fc92e",
+                    "name": "Je nai pas compris"
+                },
+                "actionIndices": [
+                    0
+                ]
+            },
+            {
+                "type": "step_actions",
+                "step": {
+                    "type": "step",
+                    "id": "5ea828dccabd6e052373647e",
+                    "name": "First step"
+                },
+                "actionIndices": [
+                    1,
+                    2
+                ]
+            }
+        ]
+    },
+    "session": {
+        "values": {}
+    },
+    "interlocutor": {
+        "type": "interlocutor",
+        "id": "5ea82863d701a505244c6705"
+    },
+    "input": {
+        "type": "go_to_action",
+        "target": {
+            "id": "5ecbc5384ad87c001b567115",
+            "type": "step",
+            "name": "test_webhook"
+        },
+        "sessionValues": {}
+    },
+    "debug": {
+        "logs": [
+            {
+                "type": "log_record",
+                "level": "INFO",
+                "message": "Going to \"test_webhook\"",
+                "createdAt": "2020-05-25T13:19:28+0000"
+            },
+            {
+                "type": "log_record",
+                "level": "INFO",
+                "message": "Executing step \"test_webhook\"",
+                "createdAt": "2020-05-25T13:19:28+0000"
+            },
+            {
+                "type": "log_record",
+                "level": "INFO",
+                "message": "Bot fallback triggered",
+                "createdAt": "2020-05-25T13:19:29+0000"
+            },
+            {
+                "type": "log_record",
+                "level": "INFO",
+                "message": "Executing story \"Fallback story\"",
+                "createdAt": "2020-05-25T13:19:29+0000"
+            },
+            {
+                "type": "log_record",
+                "level": "INFO",
+                "message": "Executing step \"Je nai pas compris\"",
+                "createdAt": "2020-05-25T13:19:29+0000"
+            },
+            {
+                "type": "log_record",
+                "level": "INFO",
+                "message": "JumpTo triggered, going to : \"start_menu\"",
+                "createdAt": "2020-05-25T13:19:29+0000"
+            },
+            {
+                "type": "log_record",
+                "level": "INFO",
+                "message": "Going to \"start_menu\"",
+                "createdAt": "2020-05-25T13:19:29+0000"
+            },
+            {
+                "type": "log_record",
+                "level": "INFO",
+                "message": "Executing story \"start_menu\"",
+                "createdAt": "2020-05-25T13:19:29+0000"
+            },
+            {
+                "type": "log_record",
+                "level": "INFO",
+                "message": "Executing step \"First step\"",
+                "createdAt": "2020-05-25T13:19:29+0000"
+            }
+        ],
+        "intentDetections": [],
+        "webhookCalls": [
+            {
+                "request": {
+                    "method": "POST",
+                    "url": "https://my-json-server.typicode.com/falaxx/myjson/posts",
+                    "body": "{\"topic\":\"conversation.step_reached\",\"botID\":\"5ea8285d89c0c3011a2fc92c\",\"timestamp\":1590412768,\"type\":\"notification_event\",\"data\":{\"type\":\"step_reached_event\",\"channel\":\"clustaar_web_chat\",\"interlocutor\":{\"id\":\"5ea82863d701a505244c6705\",\"userID\":\"clustaar-5e8d8c1ea5d4e4017b67995b\",\"location\":null,\"email\":null,\"firstName\":null,\"lastName\":null,\"phoneNumber\":null,\"customAttributes\":{}},\"session\":{\"values\":{}},\"step\":{\"id\":\"5ecbc5384ad87c001b567115\",\"name\":\"test_webhook\",\"userData\":\"\",\"actions\":[{\"type\":\"wait_action\",\"duration\":2.0},{\"type\":\"jump_to_action\",\"connections\":[],\"defaultTarget\":{\"id\":\"5eb1895da3438d011165af76\",\"type\":\"story\",\"name\":\"More questions ?\"}}]},\"input\":{\"type\":\"go_to_action\",\"target\":{\"id\":\"5ecbc5384ad87c001b567115\",\"type\":\"step\",\"name\":\"test_webhook\"},\"sessionValues\":{}}}}"
+                },
+                "response": {
+                    "status": 500,
+                    "body": "TypeError: Cannot read property 'id' of undefined\n    at Function.createId (/app/node_modules/json-server/lib/server/mixins.js:57:39)\n    at Function.insert (/app/node_modules/lodash-id/src/index.js:47:49)\n    at /app/node_modules/lodash/lodash.js:4374:28\n    at arrayReduce (/app/node_modules/lodash/lodash.js:683:21)\n    at baseWrapperValue (/app/node_modules/lodash/lodash.js:4373:14)\n    at LodashWrapper.wrapperValue (/app/node_modules/lodash/lodash.js:9052:14)\n    at create (/app/node_modules/json-server/lib/server/router/plural.js:235:48)\n    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)\n    at next (/app/node_modules/express/lib/router/route.js:137:13)\n    at next (/app/node_modules/express/lib/router/route.js:131:14)"
+                },
+                "error": "RequestFailed: Request failed (status=500 body=\"b\"TypeError: Cannot read property 'id' of undefined\\n    at Function.createId (/app/node_modules/json-server/lib/server/mixins.js:57:39)\\n    at Function.insert (/app/node_modules/lodash-id/src/index.js:47:49)\\n    at /app/node_modules/lodash/lodash.js:4374:28\\n    at arrayReduce (/app/node_modules/lodash/lodash.js:683:21)\\n    at baseWrapperValue (/app/node_modules/lodash/lodash.js:4373:14)\\n    at LodashWrapper.wrapperValue (/app/node_modules/lodash/lodash.js:9052:14)\\n    at create (/app/node_modules/json-server/lib/server/router/plural.js:235:48)\\n    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)\\n    at next (/app/node_modules/express/lib/router/route.js:137:13)\\n    at next (/app/node_modules/express/lib/router/route.js:131:14)\"\")"
+            }
+        ]
+    }
+}
