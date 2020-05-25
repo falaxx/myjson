@@ -1,12 +1,12 @@
 {
-  "posts": [
+  "posts": 
     {
       "actions": [{
         "type": "send_text_action",
         "alternatives": ["Hello", "Hi"]
       }]
     }
-  ],
+  ,
   "profile": {
     "name": "typicode"
   }
